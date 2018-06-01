@@ -1,0 +1,6 @@
+<?php
+// THE INDEX.PHP FILE
+// MAY 2018 AIRWAVE CONSULTING
+
+get_header();
+?>
