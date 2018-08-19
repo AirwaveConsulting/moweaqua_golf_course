@@ -19,18 +19,12 @@
 
   <!-- stylesheet, favicon, etc -->
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:700|Playfair+Display:400,400i,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Quattrocento:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link href="<?php echo get_template_directory_uri(); ?>/font/stylesheet.css" rel="stylesheet">
   <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png" type="image/png"/>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 </head>
 <body>
-
-<header id="page_header" class="wrap">
-  <h1 class="site_title"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.jpg">Lucas Lower<span>217-454-8240&nbsp;&nbsp;&nbsp;&nbsp;&mdash;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:lucas@lucaslower.com">lucas@lucaslower.com</a></span></h1>
-</header>
-
-<nav class="wrap" id="primary">
-  <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
-</nav>
-
-<section id="page" class="wrap">

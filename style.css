@@ -4,3 +4,329 @@ Theme URI: https://airwave.consulting
 Author: Lucas Lower
 Description: The theme for the Moweaqua Golf Course, built by Airwave.
 */
+
+/* BASE-LEVEL STYLING */
+html{
+	height:100%;
+	margin:0;
+	padding:0;
+}
+
+body{
+	height:100%;
+	margin:0;
+	padding:0;
+	font-size:16px;
+	font-family:'Questrial', sans-serif;
+	background:url('img/bg.jpg') center center;
+	background-size:cover;
+	background-attachment:fixed;
+}
+
+/* FRONT-PAGE HERO */
+section.hero{
+	width:100%;
+	height:100vh;
+	position:relative;
+	background:rgba(0,0,0,0.6);
+	color:#fff;
+}
+
+section.hero div.wrap{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-60%);
+	width:70%;
+}
+
+section.hero header#masthead{
+	position:relative;
+}
+
+section.hero div.content{
+	position:relative;
+}
+
+section.hero header#masthead h1{
+	font-size:4.5em;
+	margin:0;
+	
+	font-weight:400;
+	line-height:0.8;
+	text-align:center;
+}
+
+section.hero header#masthead h1 img{
+	width:100px;
+	height:auto;
+	position:relative;
+	top:22px;
+	margin-right:20px;
+}
+
+section.hero nav.topbar{
+	background:rgba(255,255,255,0.7);
+	margin-top:50px;
+}
+
+section.hero nav.topbar ul{
+	list-style:none;
+	color:#000;
+	padding:0;
+	margin:0;
+	display:flex;
+	justify-content:space-around;
+}
+
+section.hero nav.topbar ul li{
+	display:inline-block;
+	flex-grow:1;
+	text-align:center;
+	padding:16px 0px;
+	cursor:pointer;
+	transition:0.1s;
+	font-weight:700;
+}
+
+section.hero nav.topbar ul li svg{
+	margin-right:10px;
+	display:inline-block;
+	position:relative;
+	top:1px;
+}
+
+section.hero nav.topbar ul li:hover{
+	background:#fff;
+	transition:0.1s;
+}
+
+section.hero div.content div.main_text{
+	width:100%;
+	line-height:1.5;
+	font-size:1.5em;
+	margin:30px 0 0 0;
+	font-weight:300;
+	position:relative;
+	box-sizing:border-box;
+}
+
+section.hero div.content div.main_text img{
+	width:100px;
+	height:auto;
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+	left:0;
+}
+
+section.hero div.content div.main_text div.contact_box{
+	padding-bottom:10px;
+	border-bottom:2px solid #fff;
+	margin-bottom:10px;
+	text-align:center;
+}
+
+section.hero div.action_buttons{
+	position:absolute;
+	right:0;
+	top:50%;
+	transform:translateY(-50%);
+}
+
+section.hero div.content div.button{
+	font-size:1.5em;
+	padding:16px 56px 16px 16px;
+	cursor:pointer;
+	text-shadow:none;
+	transition:0.1s;
+	line-height:1.2;
+	position:relative;
+	margin-bottom:20px;
+	background:rgba(255,255,255,0.7);
+	color:#000;
+}
+
+section.hero div.content div.button:last-child{
+	margin-bottom:0;
+}
+
+section.hero div.content div.button:hover{
+	transition:0.1s;
+	background:#fff;
+}
+
+section.hero div.content div.button .fa-arrow-circle-right{
+	position:absolute;
+	right:16px;
+	top:50%;
+	transform:translateY(-50%);
+}
+
+section.hero div.nav_callout{
+	position:absolute;
+	bottom:40px;
+	left:50%;
+	transform:translateX(-50%);
+	font-size:1.5em;
+}
+
+section.hero div.nav_callout .fa-angle-down{
+	margin-left:20px;
+}
+
+/* DEALS SECTION */
+section.deals{
+	padding:40px 0;
+	margin:0 auto;
+	text-align:center;
+	border-bottom:1px solid #353535;
+	border-top:1px solid #fff;
+	background:rgba(255,255,255,0.8);
+}
+
+section.deals:after{
+	content:'';
+	display:table;
+	clear:both;
+}
+
+section.deals div{
+	display:inline-block;
+}
+
+section.deals div.left{
+	border-right:2px solid #353535;
+	padding-right:30px;
+	margin-right:30px;
+}
+
+section.deals h1{
+	margin:0;
+	font-size:1.7em;
+	margin-bottom:16px;
+}
+
+section.deals p{
+	font-size:1.2em;
+	margin:0;
+}
+
+/* RATES SECTION */
+section.rates{
+	background:#f0f2f4;
+	padding:60px;
+	color:#353535;
+}
+
+section.rates h1{
+	text-align:center;
+	margin:0 0 40px 0;
+	font-size:2em;
+}
+
+section.rates ul.box{
+	list-style:none;
+    margin:0;
+    padding:0;
+    column-count: 2;
+    column-gap:30px;
+}
+
+section.rates ul.box:after{
+	content:'';
+	display:table;
+	clear:both;
+}
+
+section.rates ul.box li.unit{
+    background:#fff;
+    margin-bottom:30px;
+    border:1px solid #353535;
+    overflow:hidden;
+    position:relative;
+    padding:20px;
+    break-inside:avoid;
+}
+
+section.rates ul.box li.unit h2{
+	text-align:center;
+	margin:0 0 20px 0;
+}
+
+section.rates ul.box li.unit ul{
+	list-style:none;
+	padding:0;
+}
+
+section.rates ul.box li.unit ul li{
+	display:block;
+	padding:15px 0px 6px 0px;
+	border-bottom:1px solid #cecece;
+}
+
+section.rates ul.box li.unit ul li:last-child{
+	border-bottom:none;
+}
+
+section.rates ul.box li.unit ul li:after{
+	content:'';
+	display:table;
+	clear:both;
+}
+
+section.rates ul.box li.unit ul li span.first{
+	font-family:'tex_gyre_herosbold', sans-serif;
+	float:left;
+	width:65%;
+}
+
+section.rates ul.box li.unit ul li span{
+	float:right;
+	width:35%;
+}
+
+section.rates ul.box li.unit span.note{
+	font-size:0.8em;
+	display:block;
+	border-top:1px solid #cecece;
+	padding-top:10px;
+}
+
+/* ABOUT SECTION */
+section.about{
+	background:rgba(0,0,0,0.6);
+	padding:60px;
+	border-top:1px solid #353535;
+	color:#fff;
+}
+
+section.about h1{
+	text-align:center;
+	margin:0 0 40px 0;
+	font-size:2em;
+}
+
+section.about p.body{
+	line-height:1.5;
+	font-size:1.5em;
+}
+
+/* TESTIMONIAL SECTION */
+section.testimonial{
+	background:#f0f2f4;
+	padding:60px;
+	border-top:1px solid #353535;
+	color:#353535;
+}
+
+section.testimonial h1{
+	text-align:center;
+	margin:0 0 40px 0;
+	font-size:2em;
+}
+
+section.testimonial p.body{
+	line-height:1.5;
+	font-size:1.5em;
+}
