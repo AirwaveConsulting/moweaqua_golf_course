@@ -134,10 +134,29 @@ get_header();
 	</p>
 </section>
 
-<section class="testimonial">
-	<h1>The Reviews Don't Lie!</h1>
+<section class="calendar">
+<h1>Course Calendar</h1>
+<?php echo do_shortcode('[my_calendar format="calendar" time="month" above="nav,toggle,jump,timeframe" below="none"]'); ?>
+</section>
+
+<section class="outings">
+	<h1>Outings</h1>
 	<p class="body">
-	Moweaqua Golf Course opened in 1993, but the land was purchased in 1991.  The course started out as a simple, but challenging, nine hole course.  In 2000 the the Village of Moweaqua purchased land that bordered the course to the west and in 2003 the back nine was built.  Golfers now have an 18 hole layout.  The course is kept in great shape by course superintendent Mike Jenkins, and his staff.  The original course that opened in 1993 is the current front nine; the layout has stayed the same, but the hole sequence has changed. See the chart below to get an idea of the changes.  In 2012, the course changed the front and back nines, making the back nine the front nine, and making the front nine the back nine.
+	Moweaqua Golf Course is a great location for your next golf outing.  Whether it is a small outing or a large outing, Moweaqua can take care of you. Call Brad and his staff today to get your next golf outing added to the course calendar.
+	</p>
+</section>
+
+<section class="testimonial">
+	<h1>Reviews</h1>
+	<p class="body">
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+</section>
+
+<section class="contact">
+	<h1>Contact Us</h1>
+	<p class="body">
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	</p>
 </section>
 

@@ -312,6 +312,66 @@ section.about p.body{
 	font-size:1.5em;
 }
 
+/* CALENDAR SECTION */
+section.calendar{
+	background:#f0f2f4;
+	padding:60px;
+	border-top:1px solid #353535;
+	color:#353535;
+}
+
+section.calendar h1{
+	text-align:center;
+	margin:0;
+	font-size:2em;
+}
+
+/* custom overrides for plugin */
+.mc-main td{
+	background:#fff;
+}
+.mc-main td.nextmonth{
+	background:transparent;
+}
+.mc-main td .mc-date{
+	background:transparent;
+}
+.mc-main .has-events .mc-date{
+	background:transparent;
+	color:#000;
+}
+.mc-main .my-calendar-header{
+	position:relative;
+	top:35px;
+	z-index:99999;
+}
+.mc-main table{
+	z-index:999;
+}
+.mc-main caption.my-calendar-month{
+	padding-bottom:10px;
+}
+
+
+/* OUTINGS SECTION */
+section.outings{
+	background:rgba(0,0,0,0.6);
+	padding:60px;
+	border-top:1px solid #353535;
+	color:#fff;
+}
+
+section.outings h1{
+	text-align:center;
+	margin:0 0 40px 0;
+	font-size:2em;
+}
+
+section.outings p.body{
+	line-height:1.5;
+	font-size:1.5em;
+}
+
 /* TESTIMONIAL SECTION */
 section.testimonial{
 	background:#f0f2f4;
@@ -330,3 +390,23 @@ section.testimonial p.body{
 	line-height:1.5;
 	font-size:1.5em;
 }
+
+/* CONTACT/FOOTER SECTION */
+section.contact{
+	background:rgba(0,0,0,0.6);
+	padding:60px;
+	border-top:1px solid #353535;
+	color:#fff;
+}
+
+section.contact h1{
+	text-align:center;
+	margin:0 0 40px 0;
+	font-size:2em;
+}
+
+section.contact p.body{
+	line-height:1.5;
+	font-size:1.5em;
+}
+
