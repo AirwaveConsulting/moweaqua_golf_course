@@ -125,6 +125,7 @@ section.hero div.content div.main_text div.contact_box{
 	border-bottom:2px solid #fff;
 	margin-bottom:10px;
 	text-align:center;
+	font-size:0.8em;
 }
 
 section.hero div.action_buttons{
@@ -293,6 +294,8 @@ section.rates ul.box li.unit span.note{
 	padding-top:10px;
 }
 
+/* TESTIMONIAL SECTION */
+
 /* ABOUT SECTION */
 section.about{
 	background:rgba(0,0,0,0.6);
@@ -307,7 +310,7 @@ section.about h1{
 	font-size:2em;
 }
 
-section.about p.body{
+section.about p{
 	line-height:1.5;
 	font-size:1.5em;
 }
@@ -367,7 +370,7 @@ section.outings h1{
 	font-size:2em;
 }
 
-section.outings p.body{
+section.outings p{
 	line-height:1.5;
 	font-size:1.5em;
 }
@@ -389,6 +392,24 @@ section.testimonial h1{
 section.testimonial p.body{
 	line-height:1.5;
 	font-size:1.5em;
+}
+
+section.testimonial ul{
+	list-style:none;
+    margin:0;
+    padding:0;
+    column-count: 3;
+    column-gap:20px;
+}
+
+section.testimonial ul li{
+	background:#fff;
+    margin-bottom:20px;
+    border:1px solid #353535;
+    overflow:hidden;
+    position:relative;
+    padding:20px;
+    break-inside:avoid;
 }
 
 /* CONTACT/FOOTER SECTION */

@@ -17,11 +17,11 @@ get_header();
 	<h1><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png">Moweaqua Golf Course</h1>
 	<nav class="topbar">
 		<ul>
-			<li><i class="fa fa-dollar-sign"></i>Rates</li>
-			<li><i class="fa fa-info-circle"></i>About</li>
-			<li><i class="fa fa-calendar"></i>Calendar</li>
-			<li><i class="fa fa-users"></i>Outings</li>
-			<li><i class="fa fa-phone"></i>Contact</li>
+			<li onClick="scroll_to_section('rates');"><i class="fa fa-dollar-sign"></i>Rates</li>
+			<li onClick="scroll_to_section('about');"><i class="fa fa-info-circle"></i>About</li>
+			<li onClick="scroll_to_section('calendar');"><i class="fa fa-calendar"></i>Calendar</li>
+			<li onClick="scroll_to_section('testimonial');"><i class="fa fa-comment"></i>Reviews</li>
+			<li onClick="scroll_to_section('contact');"><i class="fa fa-phone"></i>Contact</li>
 		</ul>
 	</nav>
 	</header>
@@ -66,94 +66,84 @@ get_header();
 
 <section class="deals">
 	<div class="left">
-		<h1>Wednesday Unlimited Golf</h1>
-		<p>$24/person, cart included!</p>
+		<h1><?php the_field('deals_left_side_title'); ?></h1>
+		<p><?php the_field('deals_left_side_text'); ?></p>
 	</div>
 	<div class="right">
-		<h1>Twi-Light Unlimited Golf</h1>
-		<p>$20/person after 3 PM every day, cart included!</p>
+		<h1><?php the_field('deals_right_side_title'); ?></h1>
+		<p><?php the_field('deals_right_side_text'); ?></p>
 	</div>
 </section>
 
-<section class="rates">
+<section id="rates" class="rates">
 	<h1>2018 Course Rates</h1>
 	<ul class="box">
-		<li class="unit">
-			<h2>Regular Rates</h2>
-			<ul>
-				<li><span class="first">Weekend Rates / Holidays:</span><span>$15 for 9 holes, $20 for 18</span></li>
-				<li><span class="first">Weekday Rates (M-F):</span><span>$11 for 9 holes, $15 for 18</span></li>
-				<li><span class="first">Cart Rental:</span><span>$9 for 9 holes, $15 for 18</span></li>
-				<li><span class="first">Junior Rates (Weekdays or weekends after 1pm, up to and including 18 years old):</span><span>$8</span></li>
-				<li><span class="first">Senior (M-F, over 60):</span><span>$13 for 18 holes</span></li>
-				<li><span class="first">Fall Special:</span><span>$22 for 18 holes with cart</span></li>
-			</ul>
-		</li>
-		<li class="unit">
-			<h2>Lessons</h2>
-			<ul>
-				<li><span class="first">Single Lesson:</span><span>$30</span></li>
-				<li><span class="first">Series of 4:</span><span>$100</span></li>
-			</ul>
-		</li>
-		<li class="unit">
-			<h2>Range Balls</h2>
-			<ul>
-				<li><span class="first">Large Bucket:</span><span>$7</span></li>
-				<li><span class="first">Small Bucket:</span><span>$4</span></li>
-			</ul>
-		</li>
-		<li class="unit">
-			<h2>Season Pass Options</h2>
-			<ul>
-				<li><span class="first">Individual Pass:</span><span>$470 ($940 with cart)</span></li>
-				<li><span class="first">Husband/Wife Pass:</span><span>$695 ($1370 with cart)</span></li>
-				<li><span class="first">Junior Pass (Up to age 18):</span><span>$150 (junior cart pass not offered)</span></li>
-			</ul>
-			<span class="note">Note: the above season passes are valid 7 days a week except during outings/fundraisers.</span>
-		</li>
-		<li class="unit">
-			<h2>Other Passes</h2>
-			<ul>
-				<li><span class="first">Greens Pass:</span><span>$190&nbsp;&nbsp;&mdash;&nbsp;&nbsp;For the golfer that plays 20-40 times. Cart fee required for each play.</span></li>
-				<li><span class="first">Ten Round 9-Hole Punch Card:</span><span>$90&nbsp;&nbsp;&mdash;&nbsp;&nbsp;Unrestricted use punch card, which can be combined for 18 hole play. Fully transferrable.</span></li>
-				<li><span class="first">Season Driving Range Pass:</span><span>$120&nbsp;&nbsp;&mdash;&nbsp;&nbsp;No restrictions. Unlimited for the 2018 season.</span></li>
-			</ul>
-			<span class="note">Note: the above passes (greens pass and punch card) are valid 7 days a week except during outings/fundraisers.</span>
-		</li>
+	<?php
+	// get the categories
+	$cats = get_categories();
+	foreach($cats as $cat){
+		echo '<li class="unit">';
+		echo '<h2>' . $cat->name . '</h2>';
+		echo '<ul>';
+		
+		// get posts for the cat
+		$posts = get_posts(array('category' => $cat->term_id));
+		foreach($posts as $post){
+			echo '<li><span class="first">' . $post->post_title . '</span><span>' . $post->post_content . '</span></li>';
+		}
+		
+		echo '</ul>';
+		if($cat->description != ''){
+			echo '<span class="note">' . $cat->description . '</span>';
+		}
+		echo '</li>';
+	}	
+	wp_reset_postdata();
+	?>
 	</ul>
 </section>
 
-<section class="about">
-	<h1>About the Course & Pro Shop</h1>
-	<p class="body">
-	Moweaqua Golf Course opened in 1993, but the land was purchased in 1991.  The course started out as a simple, but challenging, nine hole course.  In 2000 the the Village of Moweaqua purchased land that bordered the course to the west and in 2003 the back nine was built.  Golfers now have an 18 hole layout.  The course is kept in great shape by course superintendent Mike Jenkins, and his staff.  The original course that opened in 1993 is the current front nine; the layout has stayed the same, but the hole sequence has changed. See the chart below to get an idea of the changes.  In 2012, the course changed the front and back nines, making the back nine the front nine, and making the front nine the back nine.
-	</p>
-	<p class="body">
-	Moweaqua Pro Shop offers anything a golfer will need.  Our golf shop features a wide selection of golf clubs, balls, accessories and apparel.  The golf shop carries a variety of brands, featuring Odyssey, Nike, Ping, and many more.  The golf shop also offers professional club fitting. The pro shop is open when the course is open.
-	</p>
+<section id="about" class="about">
+	<h1><?php the_field('about_content_area_title'); ?></h1>
+	<?php the_field('about_content_area_content'); ?>
 </section>
 
-<section class="calendar">
+<section id="calendar" class="calendar">
 <h1>Course Calendar</h1>
 <?php echo do_shortcode('[my_calendar format="calendar" time="month" above="nav,toggle,jump,timeframe" below="none"]'); ?>
 </section>
 
 <section class="outings">
-	<h1>Outings</h1>
-	<p class="body">
-	Moweaqua Golf Course is a great location for your next golf outing.  Whether it is a small outing or a large outing, Moweaqua can take care of you. Call Brad and his staff today to get your next golf outing added to the course calendar.
-	</p>
+	<h1><?php the_field('outings_content_area_title'); ?></h1>
+	<?php the_field('outings_content_area_content'); ?>
 </section>
 
-<section class="testimonial">
+<section id="testimonial" class="testimonial">
 	<h1>Reviews</h1>
-	<p class="body">
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
+	<ul>
+	<?php
+	// CUSTOM LOOP FOR REVIEWS
+	$args = array(
+		'post_type' => 'reviews',
+		'orderby' => 'rand'	
+	);
+	$review_query = new WP_Query($args);
+	if( $review_query->have_posts() ) :
+	while( $review_query->have_posts() ) :
+	$review_query->the_post();
+	?>
+	
+	<li><?php the_content(); echo '<br>&mdash;&nbsp;&nbsp;'; the_title(); ?></li>
+	
+	<?php
+	wp_reset_postdata();
+	endwhile;
+	endif;
+	?>
+	</ul>
 </section>
 
-<section class="contact">
+<section id="contact" class="contact">
 	<h1>Contact Us</h1>
 	<p class="body">
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

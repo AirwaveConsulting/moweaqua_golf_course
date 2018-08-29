@@ -50,22 +50,22 @@ function main_setup() {
 endif;
 add_action( 'after_setup_theme', 'main_setup' );
 
-// BUSINESS POST TYPE
-function business_post_type() {
+// TESTIMONIAL POST TYPE
+function review_post_type() {
 
 // Set UI labels for Custom Post Type
 	$labels = array(
-		'name'                => _x( 'Businesses', 'Post Type General Name'),
-		'singular_name'       => _x( 'Business', 'Post Type Singular Name'),
-		'menu_name'           => __( 'Businesses'),
-		'parent_item_colon'   => __( 'Parent Business'),
-		'all_items'           => __( 'All Businesses'),
-		'view_item'           => __( 'View Business'),
-		'add_new_item'        => __( 'Add New Business'),
+		'name'                => _x( 'Reviews', 'Post Type General Name'),
+		'singular_name'       => _x( 'Review', 'Post Type Singular Name'),
+		'menu_name'           => __( 'Reviews'),
+		'parent_item_colon'   => __( 'Parent Review'),
+		'all_items'           => __( 'All Reviews'),
+		'view_item'           => __( 'View Review'),
+		'add_new_item'        => __( 'Add New Review'),
 		'add_new'             => __( 'Add New'),
-		'edit_item'           => __( 'Edit Business'),
-		'update_item'         => __( 'Update Business'),
-		'search_items'        => __( 'Search Business'),
+		'edit_item'           => __( 'Edit Review'),
+		'update_item'         => __( 'Update Review'),
+		'search_items'        => __( 'Search Reviews'),
 		'not_found'           => __( 'Not Found'),
 		'not_found_in_trash'  => __( 'Not found in Trash'),
 	);
@@ -73,9 +73,9 @@ function business_post_type() {
 // Set other options for Custom Post Type
 	
 	$args = array(
-		'label'               => __( 'businesses'),
-		'description'         => __( 'Moweaqua area businesses'),
-		'menu_icon'	=> 'dashicons-store',
+		'label'               => __( 'reviews'),
+		'description'         => __( 'Golf Course Reviews from Google, Facebook, etc'),
+		'menu_icon'	=> 'dashicons-admin-comments',
 		'labels'              => $labels,
 		// Features this CPT supports in Post Editor
 		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions'),
@@ -100,10 +100,10 @@ function business_post_type() {
 	);
 	
 	// Registering your Custom Post Type
-	register_post_type( 'businesses', $args );
+	register_post_type( 'reviews', $args );
 
 }
-add_action( 'init', 'business_post_type', 0 );
+add_action( 'init', 'review_post_type', 0 );
 // END BUSINESS POST TYPE
 
 
