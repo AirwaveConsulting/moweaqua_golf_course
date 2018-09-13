@@ -108,10 +108,61 @@ add_action( 'init', 'review_post_type', 0 );
 
 
 
-add_action( 'admin_menu', 'remove_menu_items' );
+add_action( 'admin_menu', 'remove_menu_items', 9999);
 
 function remove_menu_items() {
-	//remove_menu_page('edit-comments.php'); // Comments
-	//remove_menu_page('tools.php');
+	remove_menu_page('edit-comments.php'); // Comments
+	remove_menu_page('tools.php');
+	remove_menu_page('users.php');
+	remove_menu_page('plugins.php');
+	remove_menu_page('themes.php');
+	remove_menu_page('upload.php');
+	remove_menu_page('wpforms-overview');
+	remove_menu_page('edit.php?post_type=acf');
+	remove_menu_page('options-general.php');
 }
+
+function revcon_change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'Rates';
+    $submenu['edit.php'][5][0] = 'Rates';
+    $submenu['edit.php'][10][0] = 'Add Rate';
+    //$submenu['edit.php'][16][0] = 'Rates Tags';
+}
+function revcon_change_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'Rates';
+    $labels->singular_name = 'Rate';
+    $labels->add_new = 'Add Rate';
+    $labels->add_new_item = 'Add Rate';
+    $labels->edit_item = 'Edit Rate';
+    $labels->new_item = 'Rate';
+    $labels->view_item = 'View Rate';
+    $labels->search_items = 'Search Rates';
+    $labels->not_found = 'No Rates found';
+    $labels->not_found_in_trash = 'No Rates found in Trash';
+    $labels->all_items = 'All Rates';
+    $labels->menu_name = 'Rates';
+    $labels->name_admin_bar = 'Rates';
+}
+ 
+add_action( 'admin_menu', 'revcon_change_post_label' );
+add_action( 'init', 'revcon_change_post_object' );
+
+function fs_add_slugs() {
+		global $menu, $submenu;
+		$slug_template = '<br><span style="color: yellow; background: #000; display: inline-block; padding: 1px 5px; font-size: 10px;">[%s]</span>';
+		foreach ( $menu as $index => $meta ) {
+			$menu[$index][0] = $meta[0] . sprintf($slug_template, $meta[2]);
+		}
+		foreach ( $submenu as $menu_slug => $submenu_items ) {
+			foreach ($submenu_items as $index => $meta) {
+				$submenu[$menu_slug][$index][0] = $meta[0] . sprintf($slug_template, $meta[2]);
+			}
+		}
+	}
+
+// add_action( 'admin_menu', 'fs_add_slugs', 99999999 );
 ?>
