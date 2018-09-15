@@ -144,10 +144,6 @@ get_header();
 	<?php echo do_shortcode('[wpforms id="80" title="false" description="false"]'); ?>
 </section>
 
-<section id="footer" class="footer">
-	Copyright &copy; <?php echo date('Y'); ?> Moweaqua Golf Course. All Rights Reserved.<br>Design by <a href="https://airwave.consulting">AIRWAVE//CONSULTING</a>.
-</section>
-
 <?php
 get_footer();
 ?>
